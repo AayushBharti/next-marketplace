@@ -1,7 +1,7 @@
 "use client"
 
 import { PRODUCT_CATEGORIES } from "@/config"
-import { useOnClickOutside } from "@/hooks/use-on-click-outside"
+import { useOnClickOutside } from "@/hooks/useOnClickOutside"
 import { useEffect, useRef, useState } from "react"
 import NavItem from "./NavItem"
 
@@ -16,13 +16,12 @@ const NavItems = () => {
     }
 
     document.addEventListener("keydown", handler)
+    //same: document.addEventListener("keydown", (e) => handler(e))
 
     return () => {
       document.removeEventListener("keydown", handler)
     }
   }, [])
-
-
 
   const navRef = useRef<HTMLDivElement | null>(null)
 
@@ -48,7 +47,6 @@ const NavItems = () => {
             handleOpen={handleOpen}
             isOpen={isOpen}
             key={category.value}
-      
           />
         )
       })}
