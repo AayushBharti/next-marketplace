@@ -19,6 +19,7 @@ export function formatPrice(
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
+    //same as currency : currency,
     notation,
     maximumFractionDigits: 2,
   }).format(numericPrice)
